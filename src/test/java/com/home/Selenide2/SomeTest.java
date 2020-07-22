@@ -47,6 +47,5 @@ public class SomeTest
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", e);
         e.click();
         e.doubleClick();
-        ////
     }
 }
