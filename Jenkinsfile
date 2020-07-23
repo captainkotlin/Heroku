@@ -13,16 +13,18 @@ pipeline {
     stages {
         stage('Build')
         {
-                    input {
-                        message "Should we continue?"
-                        ok "Yes, we should."
-                        submitter "alice,bob"
-                        parameters {
-                            string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                        }
-                    }
-            // Get some code from a GitHub repository
-            git 'https://github.com/captainkotlin/Heroku.git'
+            steps {
+                                input {
+                                    message "Should we continue?"
+                                    ok "Yes, we should."
+                                    submitter "alice,bob"
+                                    parameters {
+                                        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                                    }
+                                }
+                        // Get some code from a GitHub repository
+                        git 'https://github.com/captainkotlin/Heroku.git'
+            }
         }
 
         stage('Test') {
