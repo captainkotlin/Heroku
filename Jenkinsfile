@@ -11,11 +11,14 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/captainkotlin/Heroku.git'
+        stage('Build')
+        {
+            // Get some code from a GitHub repository
+            git 'https://github.com/captainkotlin/Heroku.git'
+        }
 
+        stage('Test') {
+            steps {
                 // Run Maven on a Unix agent.
                 sh "mvn test"
             }
@@ -24,16 +27,13 @@ pipeline {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                     always {
-
                       step([$class: 'Mailer',
                         notifyEveryUnstableBuild: true,
                         recipients: "captainkotlin@gmail.com",
                         sendToIndividuals: true])
-   
                     }
             }
         }
-        //
     }
 }
 
