@@ -48,5 +48,5 @@ public class SomeTest
         e.click();
         e.doubleClick();
     }
-    //
+    ////
 }
