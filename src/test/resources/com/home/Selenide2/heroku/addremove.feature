@@ -1,4 +1,3 @@
-@Debug
 Feature: Add remove
 
   Background:
