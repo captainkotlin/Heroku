@@ -1,33 +1,30 @@
 package com.home.Selenide2.common.utils;
 
+import lombok.SneakyThrows;
 import org.apache.maven.model.Model;
 import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class FileUtils
 {
-    private static String mainPackage = null;
+    private static String mainPackage;
 
     static
     {
+        mainPackage = initMainPackage();
+    }
+
+    @SneakyThrows
+    private static String initMainPackage()
+    {
         MavenXpp3Reader reader = new MavenXpp3Reader();
-        Model model;
-        try
-        {
-            model = reader.read(new FileReader("pom.xml"));
-            mainPackage = packagesToPaths(model.getGroupId(), model.getArtifactId());
-        }
-        catch (IOException | XmlPullParserException e)
-        {
-            throw new RuntimeException();
-        }
+        Model model = reader.read(new FileReader("pom.xml"));
+        return packagesToPaths(model.getGroupId(), model.getArtifactId());
     }
 
     public static String getPath(String relativeFilePath)
