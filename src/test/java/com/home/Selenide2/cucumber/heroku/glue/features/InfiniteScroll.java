@@ -29,7 +29,6 @@ public class InfiniteScroll
                 .pause(1000)
                 .build();
         action.perform();
-        System.setProperty("java.awt.headless", "false");
         Robot robotWrapper = RobotWrapper.build();
         robotWrapper.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robotWrapper.mouseWheel(50);

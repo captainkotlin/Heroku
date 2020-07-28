@@ -8,6 +8,11 @@ import java.util.stream.IntStream;
 
 public class RobotWrapper extends Robot
 {
+    static
+    {
+        System.setProperty("java.awt.headless", "false");
+    }
+
     private static RobotWrapper robotWrapper;
 
     @Synchronized

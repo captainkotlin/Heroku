@@ -9,10 +9,6 @@ import java.util.function.Function;
 
 public class MoveAction implements Action
 {
-    static
-    {
-        System.setProperty("java.awt.headless", "false");
-    }
     private final Point desiredPoint;
     private Point currentPoint;
     private final RobotWrapper robotWrapper;
