@@ -8,11 +8,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class FileUtils
 {
-    private static String mainPackage;
+    private static final String mainPackage;
 
     static
     {
@@ -29,7 +30,7 @@ public class FileUtils
 
     public static String getPath(String relativeFilePath)
     {
-        return Paths.get(FileUtils.class.getClassLoader().getResource("").getFile())
+        return Paths.get(Objects.requireNonNull(FileUtils.class.getClassLoader().getResource("")).getFile())
                 .resolve(FileUtils.mainPackage)
                 .resolve(relativeFilePath)
                 .toString();

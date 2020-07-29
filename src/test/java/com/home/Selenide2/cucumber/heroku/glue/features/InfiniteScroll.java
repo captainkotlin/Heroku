@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class InfiniteScroll
 {
-    private RobotWrapper robotWrapper = RobotWrapper.build();
+    private final RobotWrapper robotWrapper = RobotWrapper.build();
 
     @Then("scroll eternally")
     @SneakyThrows

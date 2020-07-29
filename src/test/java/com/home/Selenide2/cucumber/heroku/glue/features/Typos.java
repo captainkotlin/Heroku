@@ -42,9 +42,6 @@ public class Typos
     {
         IntStream.range(0, repeatCount)
                 .mapToObj(i -> repeatFunc.apply(page))
-                .forEach(actualText ->
-                {
-                    assertEquals(actualText, expectedText);
-                });
+                .forEach(actualText -> assertEquals(actualText, expectedText));
     }
 }

@@ -35,7 +35,7 @@ dependencies {
 group = 'com.home'
 version = '0.0.1-SNAPSHOT'
 description = 'Selenide2'
-sourceCompatibility = '1.8'
+sourceCompatibility = '1.11'
 
 publishing {
     publications {
@@ -52,4 +52,19 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform {
     }
+    systemProperties System.getProperties()
+}
+
+tasks.withType(Test) {
+    systemProperties System.getProperties()
+    // verbose logging in console
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "full"
+        }
+    }
+
+    // start tests every time, even when code not changed
+    outputs.upToDateWhen { false }
 }

@@ -1,14 +1,18 @@
 package com.home.Selenide2.junit.testpages.originalcontents;
 
+import com.codeborne.selenide.WebDriverRunner;
 import com.home.Selenide2.common.RobotWrapper;
 import com.home.Selenide2.junit.testpages.originalcontents.page.FormPage;
 import com.home.Selenide2.junit.testpages.originalcontents.page.SubmittedPage;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -17,7 +21,7 @@ public class BasicHtml5Form
 {
     private static FormPage formPage;
 
-    @Before
+    @BeforeEach
     public void beforeAll()
     {
         formPage = open("https://testpages.herokuapp.com/basic_html5_form.html", FormPage.class);
@@ -49,5 +53,11 @@ public class BasicHtml5Form
         Assertions.assertEquals(expectedMonth, submittedPage.getMonth());
         Assertions.assertEquals(expectedYear, submittedPage.getYear());
         Assertions.assertEquals(expectedNumber, submittedPage.getNumber());
+    }
+
+    @AfterAll
+    public static void close()
+    {
+        WebDriverRunner.closeWebDriver();
     }
 }

@@ -16,6 +16,6 @@ public class EmailBox
         host = args[i++];
         protocol = args[i++];
         email = args[i++];
-        password = args[i++];
+        password = args[i];
     }
 }

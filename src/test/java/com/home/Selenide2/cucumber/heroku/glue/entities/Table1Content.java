@@ -40,6 +40,6 @@ public class Table1Content
         firstname = arr[i++];
         email = arr[i++];
         due = arr[i++];
-        website = arr[i++];
+        website = arr[i];
     }
 }

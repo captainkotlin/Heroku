@@ -6,8 +6,7 @@ pipeline {
     }
 
     tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "mvn3"
+        gradle "6.3"
     }
 
     stages {
@@ -22,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run Maven on a Unix agent.
-                sh "mvn test"
+                bat "gradle test -Djava.awt.headless=false"
             }
 
             post {

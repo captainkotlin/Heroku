@@ -24,7 +24,7 @@ public class ShiftingContent
     private String screenshotsFolder;
 
     private static final String expectedScreenshotName = "screen1";
-    private String actualScreenshotName = "screen2";
+    private final String actualScreenshotName = "screen2";
 
     @RegisterExtension
     static ScreenShooterExtension screenshotEmAll = new ScreenShooterExtension(true);

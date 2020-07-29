@@ -10,10 +10,9 @@ public class TinymcePage
     private static final String MCEU_14_NAME = "mce_0_ifr";
     private static final String TINYMCE_LOCATOR = "#tinymce";
 
-    public TinymcePage switchToMCEU14()
+    public void switchToMCEU14()
     {
         WebDriverRunner.getWebDriver().switchTo().frame(MCEU_14_NAME);
-        return this;
     }
 
     public SelenideElement tinymce()

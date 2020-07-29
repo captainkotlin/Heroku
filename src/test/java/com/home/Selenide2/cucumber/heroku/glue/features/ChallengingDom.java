@@ -1,10 +1,12 @@
 package com.home.Selenide2.cucumber.heroku.glue.features;
 
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import com.home.Selenide2.common.Constants;
 import com.home.Selenide2.common.utils.ImageParser;
+import com.home.Selenide2.common.utils.WebDriverLocator;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import org.apache.commons.lang3.StringUtils;
@@ -34,7 +36,7 @@ public class ChallengingDom
     @Before
     public void before()
     {
-        System.setProperty(Constants.WEBDRIVER_CHROME_DRIVER, driverPath);
+        System.setProperty(Constants.WEBDRIVER_CHROME_DRIVER, WebDriverLocator.getPath(Browsers.CHROME));
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         ChromeDriver driver = new ChromeDriver(options);

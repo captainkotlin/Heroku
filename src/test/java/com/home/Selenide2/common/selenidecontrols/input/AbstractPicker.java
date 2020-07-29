@@ -5,8 +5,8 @@ import com.home.Selenide2.common.RobotWrapper;
 
 public class AbstractPicker
 {
-    protected RobotWrapper robotWrapper = RobotWrapper.build();
-    protected SelenideElement selenideElement;
+    protected final RobotWrapper robotWrapper = RobotWrapper.build();
+    protected final SelenideElement selenideElement;
 
     public AbstractPicker(SelenideElement selenideElement)
     {

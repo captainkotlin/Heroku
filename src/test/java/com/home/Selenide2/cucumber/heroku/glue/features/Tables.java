@@ -17,7 +17,6 @@ public class Tables
 {
     @Autowired
     private TablesPage page;
-    private SelenideElement table;
     Comparator<Table1Content> comparator;
     List<Table1Content> expectedContentList;
     List<Table1Content> actualContentList;
@@ -37,7 +36,7 @@ public class Tables
     @Then("table{int} is sorted correctly")
     public void tableIsSortedCorrectly(int arg0)
     {
-        table = page.table1();
+        SelenideElement table = page.table1();
         expectedContentList = PageExt.readTable(table, Table1Content::new);
         actualContentList = expectedContentList.stream()
                 .sorted(comparator)

@@ -40,7 +40,7 @@ public class FormPage
     @FindBy(how = How.CSS, css = "input[type='reset']")
     private SelenideElement resetButton;
 
-    private RobotWrapper robotWrapper = RobotWrapper.build();
+    private final RobotWrapper robotWrapper = RobotWrapper.build();
 
     public FormPage setColor(String color)
     {
@@ -78,7 +78,7 @@ public class FormPage
         return Selenide.page(SubmittedPage.class);
     }
 
-    private FormPage operation(Supplier supplier)
+    private <T> FormPage operation(Supplier<T> supplier)
     {
         supplier.get();
         return this;

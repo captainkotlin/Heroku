@@ -7,6 +7,8 @@ import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.internal.EventFiringKeyboard;
 import org.openqa.selenium.support.events.internal.EventFiringMouse;
 
+import java.util.function.Supplier;
+
 public class CustomizedActions extends Actions
 {
     private final WebDriver driver;
@@ -40,7 +42,7 @@ public class CustomizedActions extends Actions
         return withExceptionHandling(() -> MoveAction.asMoveY(y));
     }
 
-    private CustomizedActions withExceptionHandling(ThrowableSupplier<Action> throwableSupplier)
+    private CustomizedActions withExceptionHandling(Supplier<Action> throwableSupplier)
     {
         try
         {
@@ -55,11 +57,5 @@ public class CustomizedActions extends Actions
             }
         }
         return this;
-    }
-
-    @FunctionalInterface
-    private interface ThrowableSupplier<T>
-    {
-        T get() throws Exception;
     }
 }

@@ -54,7 +54,7 @@ public class MoveAction implements Action
 
     private void updateCurrentPos(int addX, int addY)
     {
-        safeSleep(2);
+        safeSleep();
         double updatedX = currentPoint.getX() + addX;
         double updatedY = currentPoint.getY() + addY;
         robotWrapper.mouseMove((int) updatedX, (int) updatedY);
@@ -69,8 +69,8 @@ public class MoveAction implements Action
     }
 
     @SneakyThrows
-    private void safeSleep(int millis)
+    private void safeSleep()
     {
-        Thread.sleep(millis);
+        Thread.sleep(2);
     }
 }

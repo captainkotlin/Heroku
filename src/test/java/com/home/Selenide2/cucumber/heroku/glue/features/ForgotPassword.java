@@ -48,7 +48,7 @@ public class ForgotPassword
     @SneakyThrows
     public static String getLatestMessageBody(String pop3Host, String storeType, String user, String password)
     {
-        String latestMessageBody = null;
+        String latestMessageBody;
         // create properties field
         Properties properties = new Properties();
         properties.put("mail.store.protocol", "pop3");

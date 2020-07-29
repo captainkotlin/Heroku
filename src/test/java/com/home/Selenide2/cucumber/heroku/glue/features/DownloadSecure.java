@@ -4,10 +4,9 @@ import com.codeborne.selenide.AuthenticationType;
 import com.codeborne.selenide.Selenide;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DownloadSecure
 {
@@ -21,6 +20,6 @@ public class DownloadSecure
     @Then("list of files is displayed")
     public void listOfFilesIsDisplayed()
     {
-        Assert.assertTrue($x("/html/body/div[2]/div/div/h3").exists());
+        assertTrue($x("/html/body/div[2]/div/div/h3").exists());
     }
 }

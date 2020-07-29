@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Objects;
+
 import static com.codeborne.selenide.Selenide.$x;
 
 public class BrokenImages
@@ -17,7 +19,7 @@ public class BrokenImages
     public void imageAsdfContainsRealImageUnderUrl()
     {
         String srcAttr = $x("//img[@src='asdf.jpg']").getAttribute("src");
-        ResponseEntity<String> response = restTemplateSilent.getForEntity(srcAttr, String.class);
+        ResponseEntity<String> response = restTemplateSilent.getForEntity(Objects.requireNonNull(srcAttr), String.class);
         Assertions.assertTrue(response.getStatusCode().is4xxClientError());
     }
 }

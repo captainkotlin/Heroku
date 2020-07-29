@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class JavascriptAlerts

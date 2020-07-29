@@ -28,14 +28,14 @@ public class DateTimePicker extends AbstractPicker
         int i = 0;
         String year = dateParts[i++];
         String month = dateParts[i++];
-        String day = dateParts[i++];
+        String day = dateParts[i];
         robotWrapper.sendKey(month);
         robotWrapper.sendKey(day);
         robotWrapper.sendKey(year);
         robotWrapper.sendKey(KeyEvent.VK_RIGHT);
         i = 0;
         robotWrapper.sendKey(timeParts[i++]);
-        robotWrapper.sendKey(timeParts[i++]);
+        robotWrapper.sendKey(timeParts[i]);
         return this;
     }
 }

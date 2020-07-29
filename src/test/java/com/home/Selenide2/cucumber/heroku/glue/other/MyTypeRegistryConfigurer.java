@@ -30,7 +30,7 @@ public class MyTypeRegistryConfigurer implements TypeRegistryConfigurer
         typeRegistry.defineParameterType(new ParameterType<>("emailbox", ".*", EmailBox.class, new EmailBoxTransformer()));
     }
 
-    private class EmailBoxTransformer implements Transformer<EmailBox>
+    private static class EmailBoxTransformer implements Transformer<EmailBox>
     {
         @Override
         public EmailBox transform(String arg)

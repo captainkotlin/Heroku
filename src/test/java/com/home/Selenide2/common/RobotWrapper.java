@@ -21,7 +21,14 @@ public class RobotWrapper extends Robot
     {
         if (robotWrapper == null)
         {
-            robotWrapper = new RobotWrapper();
+            try
+            {
+                robotWrapper = new RobotWrapper();
+            }
+            catch (AWTException e)
+            {
+                throw new RuntimeException();
+            }
         }
         return robotWrapper;
     }

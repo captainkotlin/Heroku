@@ -3,18 +3,16 @@ package com.home.Selenide2.cucumber.heroku.glue.other;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
 
-import java.io.IOException;
-
 public class EmptyErrorHandler implements ResponseErrorHandler
 {
     @Override
-    public boolean hasError(ClientHttpResponse clientHttpResponse) throws IOException
+    public boolean hasError(ClientHttpResponse clientHttpResponse)
     {
         return false;
     }
 
     @Override
-    public void handleError(ClientHttpResponse clientHttpResponse) throws IOException
+    public void handleError(ClientHttpResponse clientHttpResponse)
     {
 
     }
