@@ -2,6 +2,7 @@ package com.home.Selenide2.cucumber.heroku.glue.features;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import com.home.Selenide2.common.selenide.SelenideUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -30,7 +31,7 @@ public class FileDownload
     @SneakyThrows
     public void urlWithListOfFiles(String url)
     {
-        Selenide.open(url);
+        SelenideUtils.open(url);
         File f = Selenide.download("http://the-internet.herokuapp.com/download/EAWeekly.png");
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("download.prompt_for_download", true);
@@ -38,7 +39,7 @@ public class FileDownload
         options.setExperimentalOption("prefs", chromePrefs);
         WebDriver driver = new ChromeDriver(options);
         WebDriverRunner.setWebDriver(driver);
-        Selenide.open(url);
+        SelenideUtils.open(url);
     }
 
     @When("href is pressed {string}")

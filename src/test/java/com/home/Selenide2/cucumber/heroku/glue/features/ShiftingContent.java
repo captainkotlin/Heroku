@@ -3,6 +3,7 @@ package com.home.Selenide2.cucumber.heroku.glue.features;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.junit5.ScreenShooterExtension;
 import com.home.Selenide2.common.beans.RestTemplateSilent;
+import com.home.Selenide2.common.selenide.SelenideUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,15 +33,15 @@ public class ShiftingContent
     @Given("screenshot opened {string}")
     public void screenshotOpened(String url)
     {
-        Selenide.open(url);
-        Selenide.screenshot(expectedScreenshotName);
+        SelenideUtils.open(url);
+        SelenideUtils.screenshot(expectedScreenshotName);
     }
 
     @When("^page (.*) is opened$")
     public void pageScreenshotUrlIsOpened(String url)
     {
-        Selenide.open(url);
-        Selenide.screenshot(actualScreenshotName);
+        SelenideUtils.open(url);
+        SelenideUtils.screenshot(actualScreenshotName);
     }
 
     @Then("^comparisonStatus is (.*)$")

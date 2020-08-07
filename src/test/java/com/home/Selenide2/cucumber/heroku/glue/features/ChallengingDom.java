@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import com.home.Selenide2.common.Constants;
-import com.home.Selenide2.common.utils.ImageParser;
+import com.home.Selenide2.common.python.ImageParser;
 import com.home.Selenide2.common.utils.WebDriverLocator;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;

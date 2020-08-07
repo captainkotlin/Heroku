@@ -2,6 +2,7 @@ package com.home.Selenide2.cucumber.heroku.glue.features;
 
 import com.codeborne.selenide.AuthenticationType;
 import com.codeborne.selenide.Selenide;
+import com.home.Selenide2.common.selenide.SelenideUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,7 +23,7 @@ public class BasicAuth
     @When("requested with user = {string} and pass = {string}")
     public void requestedWithUserAndPass(String user, String pass)
     {
-        Selenide.open(url, AuthenticationType.BASIC, user, pass);
+        SelenideUtils.open(url, AuthenticationType.BASIC, user, pass);
     }
 
     @Then("authorization successful")

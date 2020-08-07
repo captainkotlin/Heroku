@@ -2,11 +2,10 @@ package com.home.Selenide2.junit.testpages.originalcontents.page;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.home.Selenide2.common.RobotWrapper;
-import com.home.Selenide2.common.selenidecontrols.input.ColorPicker;
-import com.home.Selenide2.common.selenidecontrols.input.DatePicker;
-import com.home.Selenide2.common.selenidecontrols.input.DateTimePicker;
-import com.home.Selenide2.common.selenidecontrols.input.MonthPicker;
+import com.home.Selenide2.common.selenide.controls.input.common.ColorPicker;
+import com.home.Selenide2.common.selenide.controls.input.common.DatePicker;
+import com.home.Selenide2.common.selenide.controls.input.common.DateTimePicker;
+import com.home.Selenide2.common.selenide.controls.input.common.MonthPicker;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -40,8 +39,6 @@ public class FormPage
     @FindBy(how = How.CSS, css = "input[type='reset']")
     private SelenideElement resetButton;
 
-    private final RobotWrapper robotWrapper = RobotWrapper.build();
-
     public FormPage setColor(String color)
     {
         return operation(() -> ColorPicker.of(colorPicker).setColor(color));
@@ -54,6 +51,7 @@ public class FormPage
 
     public FormPage setDateTime(LocalDateTime localDateTime)
     {
+        int i = 5;
         return operation(() -> DateTimePicker.of(dateTimePicker).setDateTime(localDateTime));
     }
 

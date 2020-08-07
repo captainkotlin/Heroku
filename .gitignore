@@ -33,3 +33,5 @@ build/
 #gradle
 .gradle/
 gradle/
+
+debug.log

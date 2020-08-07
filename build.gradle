@@ -18,18 +18,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'io.cucumber:cucumber-core:6.2.2'
-    testImplementation 'io.cucumber:cucumber-java:6.2.0'
-    testImplementation 'io.cucumber:cucumber-expressions:10.2.1'
-    testImplementation 'io.cucumber:cucumber-junit:6.2.0'
-    testImplementation 'io.cucumber:cucumber-spring:6.2.0'
-    testImplementation 'com.codeborne:selenide:5.13.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-mail'
-    testImplementation 'org.apache.maven:maven-model:3.6.3'
+    testImplementation 'org.springframework.boot:spring-boot-starter-web',
+            'io.cucumber:cucumber-core:6.2.2',
+            'io.cucumber:cucumber-java:6.2.0',
+            'io.cucumber:cucumber-expressions:10.2.1',
+            'io.cucumber:cucumber-junit:6.2.0',
+            'io.cucumber:cucumber-spring:6.2.0',
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-loader-tools'
+            'com.codeborne:selenide:5.13.0',
+            'org.springframework.boot:spring-boot-starter-mail',
+            'org.apache.maven:maven-model:3.6.3',
+            'org.springframework.boot:spring-boot-starter-test',
+            'org.springframework.boot:spring-boot-loader-tools'
 }
 
 group = 'com.home'
@@ -52,12 +52,10 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform {
     }
-    systemProperties System.getProperties()
 }
 
 tasks.withType(Test) {
     systemProperties System.getProperties()
-    // verbose logging in console
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
@@ -65,6 +63,5 @@ tasks.withType(Test) {
         }
     }
 
-    // start tests every time, even when code not changed
     outputs.upToDateWhen { false }
 }

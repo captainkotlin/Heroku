@@ -2,6 +2,7 @@ package com.home.Selenide2.cucumber.heroku.glue.features;
 
 import com.codeborne.selenide.AuthenticationType;
 import com.codeborne.selenide.Selenide;
+import com.home.Selenide2.common.selenide.SelenideUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,7 +23,7 @@ public class DigestAuth
     @When("login is tried with user = {string} and password = {string}")
     public void loginIsTriedWithUserAndPassword(String user, String password)
     {
-        Selenide.open(url, AuthenticationType.BASIC, user, password);
+        SelenideUtils.open(url, AuthenticationType.BASIC, user, password);
     }
 
     @Then("login is successful")

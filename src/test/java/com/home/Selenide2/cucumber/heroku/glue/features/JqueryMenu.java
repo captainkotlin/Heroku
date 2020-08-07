@@ -8,17 +8,17 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.actions;
 
 public class JqueryMenu
 {
     @Then("able to click {string} button")
     public void pressed(String str)
     {
-        WebDriver driver = WebDriverRunner.getWebDriver();
         SelenideElement enabledButton = $("#ui-id-2");
         SelenideElement downloadButton = $("#ui-id-4");
         SelenideElement excelButton = $("#ui-id-8");
-        Action action = new Actions(driver)
+        Action action = actions()
                 .moveToElement(enabledButton)
                 .click()
                 .pause(1000)

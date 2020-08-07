@@ -2,6 +2,7 @@ package com.home.Selenide2.cucumber.heroku.glue.features;
 
 import com.codeborne.selenide.AuthenticationType;
 import com.codeborne.selenide.Selenide;
+import com.home.Selenide2.common.selenide.SelenideUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -13,7 +14,7 @@ public class DownloadSecure
     @When("url = {string} with {string} and {string}")
     public void popupIsFilledWithAnd(String url, String user, String pass) throws InterruptedException
     {
-        Selenide.open(url, AuthenticationType.BASIC, user, pass);
+        SelenideUtils.open(url, AuthenticationType.BASIC, user, pass);
         Thread.sleep(3000);
     }
 

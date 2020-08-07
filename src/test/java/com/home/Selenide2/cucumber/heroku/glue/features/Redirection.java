@@ -2,6 +2,7 @@ package com.home.Selenide2.cucumber.heroku.glue.features;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import com.home.Selenide2.common.selenide.SelenideUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public class Redirection
     @When("url requested {string}")
     public void urlRequested(String url)
     {
-        Selenide.open(url);
+        SelenideUtils.open(url);
     }
 
     @Then("url opened {string}")

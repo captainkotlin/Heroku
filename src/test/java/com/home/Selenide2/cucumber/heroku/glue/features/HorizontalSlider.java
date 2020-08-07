@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.actions;
 
 public class HorizontalSlider
 {
@@ -18,8 +19,7 @@ public class HorizontalSlider
     @When("slider moved to top right")
     public void sliderMovedToTopRight()
     {
-        WebDriver driver = WebDriverRunner.getWebDriver();
-        Action action = new Actions(driver).dragAndDropBy(slider, 80, 0).build();
+        Action action = actions().dragAndDropBy(slider, 80, 0).build();
         action.perform();
     }
 

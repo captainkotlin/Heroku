@@ -1,6 +1,6 @@
 package com.home.Selenide2.cucumber.heroku.glue.other.actions;
 
-import com.home.Selenide2.common.RobotWrapper;
+import com.home.Selenide2.common.robot.RobotUtils;
 import lombok.SneakyThrows;
 import org.openqa.selenium.interactions.Action;
 
@@ -11,11 +11,11 @@ public class MoveAction implements Action
 {
     private final Point desiredPoint;
     private Point currentPoint;
-    private final RobotWrapper robotWrapper;
+    private final RobotUtils robotWrapper;
 
     public MoveAction(double x, double y)
     {
-        robotWrapper = RobotWrapper.build();
+        robotWrapper = RobotUtils.build();
         currentPoint = currentMouseCoords();
         desiredPoint = new Point();
         desiredPoint.setLocation(x, y);

@@ -14,6 +14,7 @@ public class SubmittedPage
     private SelenideElement colorField;
 
     @FindBy(how = How.ID, id = "_valuedate")
+    //@FindBy(how = How.ID, id = "_valuedate")
     private SelenideElement dateField;
 
     @FindBy(how = How.ID, id = "_valuedatetime")
