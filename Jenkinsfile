@@ -21,7 +21,8 @@ pipeline {
         stage('Test') {
             steps {
                 // Run Maven on a Unix agent.
-                bat "gradle build \
+                bat "\
+                    gradle build \
                     -Dcucumber.filter.tags=\"not @ignore\" \
                     -Djava.awt.headless=false \
                     -Dselenide.browser=chrome \
