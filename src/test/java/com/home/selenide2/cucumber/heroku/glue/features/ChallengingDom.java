@@ -35,6 +35,7 @@ public class ChallengingDom
         inBrowsersAction(Browsers.CHROME).add(browser ->
         {
             var parts = Arrays.stream(result.split(" ")).map(String::trim).toArray(String[]::new);
+            System.out.println(parts);
             var preLastPart = parts[parts.length - 2];
             var lastPart = parts[parts.length - 1];
             assertTrue(StringUtils.endsWith(preLastPart, expectedStr));
