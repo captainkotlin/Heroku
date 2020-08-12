@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON_HOME = /C:\Program Files\python/
+    }
+
     triggers {
         pollSCM('* * * * *')
     }

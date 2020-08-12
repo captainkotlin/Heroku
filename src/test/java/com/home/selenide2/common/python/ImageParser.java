@@ -18,9 +18,7 @@ public class ImageParser
 
     public String parse() throws InterruptedException, IOException
     {
-        //String cmdLine = "python3 " + FileUtils.getPath(PARSER_SCRIPT) + " " + imagePath;
         Process process = new ProcessBuilder()
-                //.command(cmdLine)
                 .command(PYTHON_EXECUTABLE, FileUtils.getResourcePath(PARSER_SCRIPT), imagePath)
                 .start();
         process.waitFor();
