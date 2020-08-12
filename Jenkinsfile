@@ -10,7 +10,7 @@ pipeline {
     }
 
     tools {
-        gradle "6.3"
+        gradle "6.6"
     }
 
     stages {
