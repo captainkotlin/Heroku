@@ -27,9 +27,7 @@ pipeline {
                     -Djava.awt.headless=false \
                     -Dselenide.browser=chrome \
                     -Dselenide.remote=http://192.168.0.105:4444/wd/hub \
-                    -Dorg.gradle.debug=true \
-                    --no-daemon \
-                    "
+                    -Dorg.gradle.debug=true"
             }
 
             post {
