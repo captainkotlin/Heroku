@@ -90,7 +90,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.home.Selenide2.Selenide2Application</mainClass>
+					<mainClass>com.home.selenide2.Selenide2Application</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -120,7 +120,7 @@
 					<mainClass>io.cucumber.core.cli.Main</mainClass>
 					<arguments>
 						<argument>src/test/resources</argument>
-						<glue>src/test/java/com/home/Selenide2/durr</glue>
+						<glue>src/test/java/com/home/selenide2/durr</glue>
 					</arguments>
 				</configuration>
 			</plugin>

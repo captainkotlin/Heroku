@@ -6,7 +6,7 @@ plugins {
     id 'java'
     id 'maven-publish'
     id "io.freefair.lombok" version "5.1.0"
-    id "org.springframework.boot" version '2.3.1.RELEASE'
+//    id "org.springframework.boot" version '2.3.1.RELEASE'
     id "io.spring.dependency-management" version "1.0.8.RELEASE"
 }
 
@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.springframework.boot:spring-boot-starter-web',
+    testImplementation 'org.springframework.boot:spring-boot-starter-web:2.3.1.RELEASE',
             'io.cucumber:cucumber-core:6.2.2',
             'io.cucumber:cucumber-java:6.2.0',
             'io.cucumber:cucumber-expressions:10.2.1',
@@ -26,10 +26,11 @@ dependencies {
             'io.cucumber:cucumber-spring:6.2.0',
 
             'com.codeborne:selenide:5.13.0',
-            'org.springframework.boot:spring-boot-starter-mail',
-            'org.apache.maven:maven-model:3.6.3',
-            'org.springframework.boot:spring-boot-starter-test',
-            'org.springframework.boot:spring-boot-loader-tools'
+            'org.springframework.boot:spring-boot-starter-mail:2.3.1.RELEASE',
+            'org.springframework.boot:spring-boot-starter-test:2.3.1.RELEASE',
+            'org.springframework.boot:spring-boot-loader-tools:2.3.1.RELEASE',
+            'org.junit.platform:junit-platform-launcher:1.6.2',
+            'org.apache.maven:maven-model:3.6.3'
 }
 
 group = 'com.home'
