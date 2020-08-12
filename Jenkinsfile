@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run Maven on a Unix agent.
-                bat """
+                bat """\
                     gradle build
                     -Dcucumber.filter.tags=\"not @ignore\"
                     -Djava.awt.headless=false
@@ -29,7 +29,7 @@ pipeline {
                     -Dselenide.remote=http://192.168.0.105:4444/wd/hub
                     -Dorg.gradle.debug=true
                     --no-daemon
-                    """
+                    """.stripIndent()
             }
 
             post {
