@@ -1,4 +1,3 @@
-@ignore
 Feature: Challenging DOM
 
   Background:
