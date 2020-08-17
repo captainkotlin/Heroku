@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class ImageParser
 {
-    private static final String PYTHON_EXECUTABLE = String.join(File.separator, System.getenv("PYTHON_HOME"), "python.exe");
     private static final String PARSER_SCRIPT = String.join(File.separator, "python", "imageparser.py");
     private final String imagePath;
 
@@ -19,7 +18,7 @@ public class ImageParser
     public String parse() throws InterruptedException, IOException
     {
         Process process = new ProcessBuilder()
-                .command(PYTHON_EXECUTABLE, FileUtils.getResourcePath(PARSER_SCRIPT), imagePath)
+                .command("python", FileUtils.getResourcePath(PARSER_SCRIPT), imagePath)
                 .start();
         process.waitFor();
         return new String(process.getInputStream().readAllBytes());
